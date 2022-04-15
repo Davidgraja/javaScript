@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: rgba(0,0,0,0.9);
+}
+
+header{
+    width: 100%;
+    min-width: 320px;
+    min-height: 200px;
+    max-height: 200px;
+    background-image: url('https://i.postimg.cc/jSw-bFMpb/header3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+header h1{
+    color: rgba(255, 255, 255, 0.899);
+    width: 100%;
+}
+
+.contenedor-padre-figuras{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    min-width: 320px;
+   
+    
+}
+
+.figuras-geometricas{
+    
+    width: 90%;
+    height: 240px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgba(153, 146, 146, 0.886);
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    grid-gap: 16px;
+    grid-auto-rows: 100px ;
+    justify-items: center;
+    text-align: center;
+    border-radius: 20px;
+  
+}
+
+.figuras-geometricas .figuras{
+    box-shadow: 0px 5px 8px rgba(0,0,0,0.5);
+    border-radius: 16px;
+}
+
+.figuras-geometricas .figuras:hover{
+    transform: scale(1.05 , 1.05);
+    cursor: pointer;
+}
+.figuras-geometricas .figuras img{
+    width: 80%;
+    height: 70%;
+    object-fit: contain;
+    
+}
+
