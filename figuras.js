@@ -23,3 +23,28 @@ const  perimetroCirculo=(radio) =>  diametroCirculo(radio) * PI;
 
 //area
 const areaCirculo= (radio) => ( radio * radio ) * PI + " cm^2";
+
+// interaccion con el html
+
+const inputs= document.getElementById('inputs')
+console.log(inputs)
+
+
+const buttomFormulario = document.getElementById('buttom') 
+const circulo = document.getElementById('circulo') ;
+
+circulo.addEventListener('click', circuloFuncion)
+
+
+function circuloFuncion(){
+    //inputs.innerHTML="<label > lado <input id='lado' type='number'/ ></label>"
+    
+    
+}
+
+
+const ladoCirculo= document.getElementById('lado')
+buttomFormulario.addEventListener('click', buttonFuncion)
+function buttonFuncion(){
+    console.log(inputs)
+}
