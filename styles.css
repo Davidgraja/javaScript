@@ -99,6 +99,8 @@ header h1{
 .valores-figuras h2{
    padding: 10px;
     text-align: center;
+    color: rgb(224, 225, 241);
+    font-size: 2.0rem;
 }
 
 .inputs{
@@ -135,4 +137,69 @@ header h1{
     color: rgba(255, 255, 255, 0.899);
     align-self: center;
    
+}
+
+.contenedor-resultados{
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+}
+
+.resultados h2{
+    padding: 10px;
+    text-align: center;
+    color: rgb(224, 225, 241);
+    font-size: 2.0rem;
+
+}
+
+
+.resultados{
+    width: 90%;
+    min-height: 100px;
+    margin: 0 auto;
+    background-color: rgba(153, 146, 146, 0.886);
+    border-radius: 20px;
+}
+
+
+.entrega-resultados{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.entrega-resultados p{
+    font-size: 1.4rem;
+    color:#402f4a;
+
+}
+.entrega-resultados div{
+    background-color: rgba(0, 0, 0, 0.219);
+    padding: 10px;
+    width: 70%;
+    margin: 5px auto;
+    color: aquamarine;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 5px rgba(0,0,0,0.5);
+    
+}
+
+.buttom-borrar{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.buttom-borrar button{
+    padding: 8px;
+    width: 60%;
+    border-radius: 6px;
+    background-color:rgba(0, 0, 0, 0.219) ;
+    border:2px solid orange ;
+    margin-bottom: 10px;
 }
