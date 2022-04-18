@@ -1,8 +1,8 @@
 //codigo cuadrado
 
-const perimetroCuadrado= (lado) =>   lado * 4 + " cm" ;
+const perimetroCuadrado= (lado) =>   lado * 4  ;
 
-const  areaCuadrado= (lado) =>   lado * lado + " cm^2";
+const  areaCuadrado= (lado) =>   lado * lado ;
 
 //codigo triangulo
 
@@ -124,9 +124,6 @@ function cuadradoEvento(){
     eventoMensaje="cuadrado";
 }
 
-
-
-
 // evento boton calcular 
 const buttomCalcular = document.getElementById('buttom');
 buttomCalcular.addEventListener('click', buttonFuncion)
@@ -138,9 +135,9 @@ function buttonFuncion(){
         if(eventoMensaje == "circulo"){
             const valorRadio = inputRadio.value;
             inputRadio.value = "";
-            detallePerimetro.innerText=  perimetroCirculo(valorRadio ) ;
+            detallePerimetro.innerText=  perimetroCirculo(valorRadio )  ;
             detalleDiametro.innerText=diametroCirculo(valorRadio ) ;
-            detalleArea.innerText= areaCirculo(valorRadio); 
+            detalleArea.innerText= areaCirculo(valorRadio) ; 
 
         }
 
@@ -154,10 +151,8 @@ function buttonFuncion(){
             inputBase.value= "";
             inputAltura.value="";
             
-            detallePerimetro.innerText = perimetroTriangulo(valorLado1,valorLado2, valorBase);
-            detalleArea.innerText= areaTriangulo(valorBase, valorAltura);
-            
-
+            detallePerimetro.innerText = perimetroTriangulo(valorLado1,valorLado2, valorBase) ;
+            detalleArea.innerText= areaTriangulo(valorBase, valorAltura) ;
         }
 
         else if(eventoMensaje=="cuadrado"){
@@ -165,8 +160,29 @@ function buttonFuncion(){
             inputLado1.value="";
             detallePerimetro.innerText = perimetroCuadrado(valorlado);
             detalleArea.innerText = areaCuadrado(valorlado);
-
         }
         
     }
+}
+
+const botonBorrar = document.getElementById("botonBorrar");
+botonBorrar.addEventListener('click', borrar);
+
+function borrar(){
+    if(eventoMensaje=="circulo"){
+        detallePerimetro.innerText="";
+        detalleArea.innerText="";
+        detalleDiametro.innerText="";
+    }
+
+    else if(eventoMensaje=="triangulo"){
+        detallePerimetro.innerText="";
+            detalleArea.innerText="";
+    }
+    else if(eventoMensaje=="cuadrado"){
+            detallePerimetro.innerText="";
+            detalleArea.innerText="";
+    }
+
+
 }
