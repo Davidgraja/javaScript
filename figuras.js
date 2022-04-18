@@ -24,6 +24,11 @@ const  perimetroCirculo=(radio) =>  diametroCirculo(radio) * PI ;
 //area
 const areaCirculo= (radio) => ( radio * radio ) * PI ;
 
+//triangulo isoceles
+const alturaIsoceles= (lados,base)=> {
+    const altura = Math.sqrt(lados**2 - base**2 / 4)
+}
+
 // interaccion con el html
 
 // obtenccion   las etiquetas padres , del formulario y de la entrega de informacion 
