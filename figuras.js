@@ -25,10 +25,36 @@ const  perimetroCirculo=(radio) =>  diametroCirculo(radio) * PI ;
 const areaCirculo= (radio) => ( radio * radio ) * PI ;
 
 //triangulo isoceles
-const alturaIsoceles= (lados,base)=> {
-    const altura = Math.sqrt(lados**2 - base**2 / 4)
+function alturaIsoceles(ladoA,ladoB,base){
+    if(ladoA == ladoB && ladoA != base){
+        console.log("es un triangulo isoceles ")
+        return  Math.sqrt(ladoA**2 - base **2 /4)
+        
+    }
+
+    else{
+        console.log("imposible de calcular ")
+    }
 }
 
+function areaIsoceles(ladoA , ladoB, base) {
+    let altura = alturaIsoceles(ladoA , ladoB ,base)
+    let area = base * altura / 2 ;
+    console.log(area);
+
+}
+
+function perimetroIsoceles(ladoA , ladoB, base){
+    if(ladoA== ladoB && ladoA!= base){
+        let perimetro =  (2 * ladoA ) + base;
+        console.log(perimetro);
+    }
+    else{
+        console.log("calculo no posible de realizar");
+    }
+}
+
+perimetroIsoceles(3, 3 , 2)
 // interaccion con el html
 
 // obtenccion   las etiquetas padres , del formulario y de la entrega de informacion 
