@@ -25,36 +25,39 @@ const  perimetroCirculo=(radio) =>  diametroCirculo(radio) * PI ;
 const areaCirculo= (radio) => ( radio * radio ) * PI ;
 
 //triangulo isoceles
-function alturaIsoceles(ladoA,ladoB,base){
-    if(ladoA == ladoB && ladoA != base){
-        console.log("es un triangulo isoceles ")
-        return  Math.sqrt(ladoA**2 - base **2 /4)
+// function alturaIsoceles(ladoA,ladoB,base){
+//     if(ladoA == ladoB && ladoA != base){
+//         console.log("es un isoceles")
         
-    }
 
-    else{
-        console.log("imposible de calcular ")
-    }
-}
+//         const altura= Math.sqrt((ladoA * ladoA) - ((base * base) / 4) );
+//         return altura;
+//     }
 
-function areaIsoceles(ladoA , ladoB, base) {
-    let altura = alturaIsoceles(ladoA , ladoB ,base)
-    let area = base * altura / 2 ;
-    console.log(area);
+//     else{
+//         console.log("imposible de calcular ")
+//     }
+// }
 
-}
+// alturaIsoceles(5,5,12)
 
-function perimetroIsoceles(ladoA , ladoB, base){
-    if(ladoA== ladoB && ladoA!= base){
-        let perimetro =  (2 * ladoA ) + base;
-        console.log(perimetro);
-    }
-    else{
-        console.log("calculo no posible de realizar");
-    }
-}
 
-perimetroIsoceles(3, 3 , 2)
+// function areaIsoceles(ladoA , ladoB, base) {
+//     let altura = alturaIsoceles(ladoA , ladoB ,base)
+//     let area = base * altura / 2 ;
+//     console.log(area);
+
+// }
+
+// function perimetroIsoceles(ladoA , ladoB, base){
+//     if(ladoA== ladoB && ladoA!= base){
+//         let perimetro =  (2 * ladoA ) + base;
+//         console.log(perimetro);
+//     }
+//     else{
+//         console.log("calculo no posible de realizar");
+//     }
+// }
 // interaccion con el html
 
 // obtenccion   las etiquetas padres , del formulario y de la entrega de informacion 
@@ -78,6 +81,9 @@ const detallePerimetro = document.createElement('div');
 const detalleDiametro= document.createElement('div');
 const detalleArea=document.createElement('div');
 
+const alturaI = document.createElement('p');
+alturaI.textContent="altura";
+const detalleAltura = document.createElement("div");
 
 
 // evento circulo
@@ -155,6 +161,35 @@ function cuadradoEvento(){
     eventoMensaje="cuadrado";
 }
 
+//evento triangulo isoceles 
+
+const isoceles = document.getElementById("Triangulo-isoceles");
+isoceles.addEventListener('click', isocelesFuncion);
+
+const mensajeError = document.createElement('p');
+mensajeError.textContent=" Mensaje"
+const mensajeDetalle = document.createElement('div');
+function isocelesFuncion(){
+
+    inputs.appendChild(lado1);
+    lado1.appendChild(inputLado1);
+    inputs.appendChild(lado2);
+    lado2.appendChild(inputLado2);
+    inputs.appendChild(base);
+    base.appendChild(inputBase);
+
+    
+    resultado.appendChild(alturaI);
+    resultado.appendChild(detalleAltura);
+    resultado.appendChild(perimetro);
+    resultado.appendChild(detallePerimetro);
+    resultado.appendChild(area);
+    resultado.appendChild(detalleArea);
+
+    eventoMensaje = "isoceles";
+
+}
+
 // evento boton calcular 
 const buttomCalcular = document.getElementById('buttom');
 buttomCalcular.addEventListener('click', buttonFuncion)
@@ -191,6 +226,19 @@ function buttonFuncion(){
             inputLado1.value="";
             detallePerimetro.innerText = perimetroCuadrado(valorlado);
             detalleArea.innerText = areaCuadrado(valorlado);
+        }
+
+
+        else if( eventoMensaje == "isoceles"){
+            const lado1= inputLado1.value;
+            const lado2= inputLado2.value;
+            const base = inputBase.value;
+
+            inputLado1.value= "";
+            inputLado2.value="";
+            inputBase.value="";
+
+            
         }
         
     }
