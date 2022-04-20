@@ -25,39 +25,53 @@ const  perimetroCirculo=(radio) =>  diametroCirculo(radio) * PI ;
 const areaCirculo= (radio) => ( radio * radio ) * PI ;
 
 //triangulo isoceles
-// function alturaIsoceles(ladoA,ladoB,base){
-//     if(ladoA == ladoB && ladoA != base){
-//         console.log("es un isoceles")
+
+// function alturaIsoceles(lado1, lado2, base){
+//     if(lado1 === lado2 && lado1 != base){
+//         console.log('isoceles')
+//         const altura = Math.sqrt(lado1**2 - base**2/ 4)
+//         console.log(altura)
+//     }
+//     else{
+//         console.log('no lo se')
+//     }
+// }
+// alturaIsoceles(5, 6, 8)
+
+
+function alturaIsoceles(lado1,lado2,base){
+    if(lado1 == lado2 && lado1 != base){
+       // console.log("es un isoceles")
         
 
-//         const altura= Math.sqrt((ladoA * ladoA) - ((base * base) / 4) );
-//         return altura;
-//     }
+        return Math.sqrt(lado1**2 - base ** 2 / 4)
+        //console.log(altura)
 
-//     else{
-//         console.log("imposible de calcular ")
-//     }
-// }
+    }
 
-// alturaIsoceles(5,5,12)
+    
+}
 
 
-// function areaIsoceles(ladoA , ladoB, base) {
-//     let altura = alturaIsoceles(ladoA , ladoB ,base)
-//     let area = base * altura / 2 ;
-//     console.log(area);
 
-// }
 
-// function perimetroIsoceles(ladoA , ladoB, base){
-//     if(ladoA== ladoB && ladoA!= base){
-//         let perimetro =  (2 * ladoA ) + base;
-//         console.log(perimetro);
-//     }
-//     else{
-//         console.log("calculo no posible de realizar");
-//     }
-// }
+function areaIsoceles(ladoA , ladoB, base) {
+    let altura = alturaIsoceles(ladoA , ladoB ,base)
+    let area = (base * altura) / 2
+    return area;
+
+}
+
+areaIsoceles(5,5,8);
+
+function perimetroIsoceles(ladoA , ladoB, base){
+    if(ladoA== ladoB && ladoA!= base){
+        return  (2 * ladoA ) + base;
+        
+    }
+    
+}
+
 // interaccion con el html
 
 // obtenccion   las etiquetas padres , del formulario y de la entrega de informacion 
@@ -238,6 +252,21 @@ function buttonFuncion(){
             inputLado2.value="";
             inputBase.value="";
 
+            detalleAltura.innerText= alturaIsoceles(lado1,lado2,base);
+            detallePerimetro.innerText = perimetroIsoceles(lado1, lado2 ,base);
+            detalleArea.innerText = areaIsoceles(lado1 ,lado2 ,base);
+           if(detalleAltura.innerText == "undefined" || detalleAltura.innerText=="NaN"){
+                detalleAltura.innerText= "No fue posible calcular "
+            }
+
+            if(detallePerimetro.innerText== "undefined" || detallePerimetro.innerText=="NaN"){
+                detallePerimetro.innerText = "No fue posible calcular "
+            }
+
+            if(detalleArea.innerText== "undefined" || detalleArea.innerText == "NaN") {
+                detalleArea.innerText = "No fue posible calcular"
+            }
+            
             
         }
         
