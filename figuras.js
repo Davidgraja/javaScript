@@ -51,6 +51,7 @@ function alturaIsoceles(lado1,lado2,base){
 
     
 }
+console.log(alturaIsoceles(5,5,4));
 
 
 
@@ -180,9 +181,6 @@ function cuadradoEvento(){
 const isoceles = document.getElementById("Triangulo-isoceles");
 isoceles.addEventListener('click', isocelesFuncion);
 
-const mensajeError = document.createElement('p');
-mensajeError.textContent=" Mensaje"
-const mensajeDetalle = document.createElement('div');
 function isocelesFuncion(){
 
     inputs.appendChild(lado1);
@@ -290,6 +288,13 @@ function borrar(){
     else if(eventoMensaje=="cuadrado"){
             detallePerimetro.innerText="";
             detalleArea.innerText="";
+    }
+
+    else if (eventoMensaje == "isoceles"){
+        detalleAltura.innerText= "";
+        detallePerimetro.innerText= "";
+        detalleArea.innerText = "";
+
     }
 
 

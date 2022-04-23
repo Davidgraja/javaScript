@@ -43,6 +43,7 @@ header h1{
 .figuras-geometricas{
     
     width: 90%;
+    min-width: 320px;
     height: 290px;
     margin: 0 auto;
     padding: 10px;
